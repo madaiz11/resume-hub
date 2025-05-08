@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "title": "Resume Hub - Marut Maluleem",
+    "description": "Resume Hub is a platform for creating and managing resumes. It is a platform for creating and managing resumes."
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "thai": "Thai"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "role": "Full Stack Developer",
+    "description": "Passionate about creating innovative solutions and delivering exceptional user experiences"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a full-stack developer with expertise in modern web technologies",
+    "education": "Education",
+    "interests": "Interests"
+  },
+  "education": {
+    "title": "Education",
+    "description": "Academic background and qualifications"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "present": "Present",
+    "responsibilities": "Key Responsibilities",
+    "achievements": "Achievements"
+  },
+  "skills": {
+    "title": "Skills",
+    "technical": "Technical Skills",
+    "soft": "Soft Skills",
+    "languages": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "tools": "Tools & Technologies"
+  },
+  "projects": {
+    "title": "Projects",
+    "view": "View Project",
+    "source": "Source Code",
+    "technologies": "Technologies Used"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent successfully",
+    "error": "Failed to send message"
+  },
+  "profile": {
+    "download": "Download CV"
+  }
+}
