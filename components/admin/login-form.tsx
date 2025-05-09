@@ -15,8 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useAdminAuth } from "@/lib/hooks";
-import { ADMIN_TOKEN } from "@/lib/mock-data";
+import { useAdminAuth } from "@/hooks";
 import { useToast } from "@/hooks/use-toast";
 
 const loginFormSchema = z.object({
@@ -32,7 +31,8 @@ export function LoginForm() {
   const router = useRouter();
   const { login } = useAdminAuth();
   const { toast } = useToast();
-  
+  const ADMIN_TOKEN = process.env.ADMIN_TOKEN;
+
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {

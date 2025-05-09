@@ -2,7 +2,7 @@
 
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { useTranslations } from '@/lib/hooks/useTranslations';
+import { useTranslations } from '@/hooks';
 import { StatisticsClient } from './statistics-client';
 
 export default function StatisticsPage() {

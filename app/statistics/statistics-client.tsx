@@ -1,6 +1,6 @@
 "use client";
 
-import { useResumeData } from "@/lib/hooks";
+import { useResumeData } from "@/hooks";
 import { BurndownChart } from "@/components/burndown-chart";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

@@ -8,7 +8,7 @@ import { ResumeProfile } from '@/components/resume-profile';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useResumeData } from '@/lib/hooks';
+import { useResumeData } from '@/hooks';
 import { useState } from 'react';
 
 export function AdminDashboardClient() {

@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useAdminAuth } from '@/lib/hooks';
+import { useAdminAuth } from '@/hooks';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { ReactNode, useEffect, useState } from 'react';

@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useTranslations } from '@/lib/hooks/useTranslations';
+import { useTranslations } from '@/hooks';
 import { cn } from '@/lib/utils';
 import i18next from 'i18next';
 import { Globe } from 'lucide-react';

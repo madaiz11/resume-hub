@@ -2,7 +2,7 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useTranslations } from '@/lib/hooks/useTranslations';
+import { useTranslations } from '@/hooks';
 import { IExperience } from '@/src/domain/entities/resume';
 import { format, parseISO } from 'date-fns';
 

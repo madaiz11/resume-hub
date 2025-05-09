@@ -3,7 +3,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { useTranslations } from '@/lib/hooks/useTranslations';
+import { useTranslations } from '@/hooks';
 import { ISkill } from '@/src/domain/entities/resume';
 
 interface ResumeSkillsProps {

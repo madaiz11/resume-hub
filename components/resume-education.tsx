@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useTranslations } from '@/lib/hooks/useTranslations';
+import { useTranslations } from '@/hooks';
 import { IEducation } from '@/src/domain/entities/resume';
 import { format, parseISO } from 'date-fns';
 

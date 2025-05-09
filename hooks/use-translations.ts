@@ -18,6 +18,7 @@ export function useTranslations(namespace: Namespace = 'COMMON') {
       }
     },
     // Helper function to translate with specific namespace
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     tWithNS: (ns: Namespace, key: string, options?: any) => {
       return i18n.t(key, { ns: NAMESPACES[ns], ...options });
     },
@@ -26,4 +27,4 @@ export function useTranslations(namespace: Namespace = 'COMMON') {
       return i18n.getResourceBundle(i18n.language, NAMESPACES[ns]);
     },
   };
-}
+} 

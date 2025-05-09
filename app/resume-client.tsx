@@ -6,7 +6,7 @@ import { ResumeProfile } from '@/components/resume-profile';
 import { ResumeProjects } from '@/components/resume-projects';
 import { ResumeSkills } from '@/components/resume-skills';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useResumeData } from '@/lib/hooks';
+import { useResumeData } from '@/hooks';
 
 export function ResumeClient() {
   const { resumeData, isLoading } = useResumeData();

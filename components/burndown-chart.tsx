@@ -1,6 +1,5 @@
 "use client";
 
-import { BurndownPoint } from "@/lib/mock-data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   LineChart, 
@@ -13,9 +12,10 @@ import {
   ResponsiveContainer 
 } from "recharts";
 import { format, parseISO } from "date-fns";
+import { IBurndownPoint } from "@/src/domain/entities/resume";
 
 interface BurndownChartProps {
-  data: BurndownPoint[];
+  data: IBurndownPoint[];
 }
 
 export function BurndownChart({ data }: BurndownChartProps) {

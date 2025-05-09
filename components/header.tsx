@@ -1,6 +1,6 @@
 'use client';
 
-import { useAdminAuth } from '@/lib/hooks';
+import { useAdminAuth } from '@/hooks';
 import { BarChart2, FileText, LogOut, User } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
