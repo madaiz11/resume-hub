@@ -9,7 +9,11 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "check": "npm run lint && npm run type-check",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "db:migrate": "ts-node src/infrastructure/database/cli.ts migrate",
+    "db:rollback": "ts-node src/infrastructure/database/cli.ts rollback",
+    "db:seed": "ts-node src/infrastructure/database/cli.ts seed",
+    "db:clear": "ts-node src/infrastructure/database/cli.ts clear"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -50,6 +54,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.5.0",
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.1",
@@ -92,6 +97,7 @@
     "prettier": "^3.2.5",
     "tailwindcss": "^3.3.0",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
   }
 }

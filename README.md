@@ -71,6 +71,73 @@ A modern, responsive personal portfolio website built with Next.js, TypeScript, 
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## 📦 Database Setup
+
+### Option 1: Using Docker (Recommended)
+
+1. Create a `.env` file in the root directory with the following variables:
+
+   ```env
+   MONGODB_URI=mongodb://username:password@localhost:27017/resume-hub
+   MONGO_PORT=27017
+   MONGO_INITDB_ROOT_USERNAME=your_username
+   MONGO_INITDB_ROOT_PASSWORD=your_password
+   ```
+
+2. Start the MongoDB container:
+
+   ```bash
+   docker-compose up -d
+   ```
+
+### Option 2: Local MongoDB Installation
+
+1. Install MongoDB Community Edition on your system
+2. Add to your `.env` file:
+
+   ```env
+   MONGODB_URI=mongodb://localhost:27017/resume-hub
+   ```
+
+### Database Models
+
+The application uses Mongoose with TypeGoose for type-safe MongoDB models:
+
+- **Resume**: Main resume model containing all sections
+- **Profile**: Personal information and contact details
+- **Experience**: Work experience entries
+- **Education**: Educational background
+- **Skills**: Technical and professional skills
+- **Projects**: Portfolio projects
+
+### Database Migrations and Seeders
+
+The application includes a database migration and seeder system for managing the database schema and initial data.
+
+#### Available Commands
+
+```bash
+# Run database migrations
+npm run db:migrate
+
+# Rollback migrations
+npm run db:rollback
+
+# Seed the database with initial data
+npm run db:seed
+
+# Clear all data from the database
+npm run db:clear
+```
+
+#### Migration Files
+Located in `src/infrastructure/database/migrations/`:
+- `001_initial_schema.ts` - Creates the initial database schema with collections and validation
+
+#### Seeder Files
+Located in `src/infrastructure/database/seeders/`:
+- `001_resume_seeder.ts` - Populates the database with sample resume data
+
 ## 🛠️ Development
 
 ### Project Structure
