@@ -3,12 +3,12 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useTranslations } from '@/hooks';
-import { IProject } from '@/src/domain/entities/resume';
+import { ProjectType } from '@/src/domain/resume/entities';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 interface ResumeProjectsProps {
-  projects: IProject[];
+  projects: ProjectType[];
 }
 
 export function ResumeProjects({ projects }: ResumeProjectsProps) {
@@ -22,7 +22,7 @@ export function ResumeProjects({ projects }: ResumeProjectsProps) {
       <CardContent>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.map(project => (
-            <Card key={project.id} className="overflow-hidden">
+            <Card key={'project-' + project.title} className="overflow-hidden">
               {project.image && (
                 <div className="aspect-video w-full overflow-hidden">
                   <Image
@@ -40,7 +40,7 @@ export function ResumeProjects({ projects }: ResumeProjectsProps) {
               <CardContent className="p-4 pt-0">
                 <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
+                  {project.technologies.map((tech: string, index: number) => (
                     <Badge variant="outline" key={index}>
                       {tech}
                     </Badge>

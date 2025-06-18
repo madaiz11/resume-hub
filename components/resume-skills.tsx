@@ -4,11 +4,19 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { useTranslations } from '@/hooks';
-import { ISkill } from '@/src/domain/entities/resume';
+  import { SkillType } from '@/src/domain/resume/entities';
+import { SkillLevelEnum } from '@/src/domain/resume/enums';
 
 interface ResumeSkillsProps {
-  skills: ISkill[];
+  skills: SkillType[];
 }
+
+const SKILL_LEVEL_MAP = {
+  [SkillLevelEnum.BEGINNER]: 1,
+  [SkillLevelEnum.INTERMEDIATE]: 2,
+  [SkillLevelEnum.ADVANCED]: 3,
+  [SkillLevelEnum.EXPERT]: 4,
+};
 
 export function ResumeSkills({ skills }: ResumeSkillsProps) {
   const { t } = useTranslations();
@@ -22,7 +30,7 @@ export function ResumeSkills({ skills }: ResumeSkillsProps) {
       acc[skill.category].push(skill);
       return acc;
     },
-    {} as Record<string, ISkill[]>
+    {} as Record<string, SkillType[]>
   );
 
   return (
@@ -37,11 +45,11 @@ export function ResumeSkills({ skills }: ResumeSkillsProps) {
               <h3 className="mb-3 font-medium">{category}</h3>
               <div className="grid gap-3 sm:grid-cols-2">
                 {categorySkills.map(skill => (
-                  <div key={skill.id} className="flex items-center gap-2">
+                  <div key={'skill-' + skill.name} className="flex items-center gap-2">
                     <div className="w-full max-w-[180px]">
                       <p className="text-sm">{skill.name}</p>
                     </div>
-                    <Progress value={skill.level * 20} className="h-2 flex-1" />
+                    <Progress value={SKILL_LEVEL_MAP[skill.level] * 20} className="h-2 flex-1" />
                     <Badge variant="outline" className="w-8 justify-center">
                       {skill.level}
                     </Badge>

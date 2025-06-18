@@ -1,11 +1,11 @@
-import { IResumeData } from "@/src/domain/entities/resume";
-import { IResumeRepository } from "@/src/domain/ports/resume-repository";
+import { ResumeType } from "@/src/domain/resume/entities";
+import { IResumeRepository } from "@/src/domain/resume/ports/resume-repository";
 import { mockResumeData } from "../mock/mock-data";
 
 export class LocalStorageResumeRepository implements IResumeRepository {
   private readonly STORAGE_KEY = "resumeData";
 
-  async getResumeData(): Promise<IResumeData> {
+  async getResumeData(): Promise<ResumeType> {
     if (typeof window === "undefined") {
       return mockResumeData;
     }
@@ -20,7 +20,7 @@ export class LocalStorageResumeRepository implements IResumeRepository {
     return JSON.parse(storedData);
   }
 
-  async updateResumeData(data: IResumeData): Promise<void> {
+  async updateResumeData(data: ResumeType): Promise<void> {
     if (typeof window === "undefined") return;
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
   }

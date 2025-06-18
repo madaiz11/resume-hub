@@ -13,7 +13,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { IProfileData } from '@/src/domain/entities/resume';
+import { ProfileType } from '@/src/domain/resume/entities';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -47,8 +47,8 @@ const profileFormSchema = z.object({
 type ProfileFormValues = z.infer<typeof profileFormSchema>;
 
 interface IProfileFormProps {
-  profile: IProfileData;
-  onSave: (profile: IProfileData) => void;
+  profile: ProfileType;
+  onSave: (profile: ProfileType) => void;
 }
 
 export function ProfileForm({ profile, onSave }: IProfileFormProps) {
@@ -64,7 +64,7 @@ export function ProfileForm({ profile, onSave }: IProfileFormProps) {
     setIsSubmitting(true);
     // Simulate API call
     setTimeout(() => {
-      onSave(data as IProfileData);
+      onSave(data as ProfileType);
       setIsSubmitting(false);
       toast({
         title: 'Profile updated',

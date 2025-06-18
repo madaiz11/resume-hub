@@ -3,12 +3,12 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useTranslations } from '@/hooks';
-import { IProfileData } from '@/src/domain/entities/resume';
+import { ProfileType } from '@/src/domain/resume/entities';
 import { Download, Github, Globe, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 
 interface ResumeProfileProps {
-  profile: IProfileData;
+  profile: ProfileType;
 }
 
 export function ResumeProfile({ profile }: ResumeProfileProps) {

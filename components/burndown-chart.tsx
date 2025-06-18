@@ -12,10 +12,9 @@ import {
   ResponsiveContainer 
 } from "recharts";
 import { format, parseISO } from "date-fns";
-import { IBurndownPoint } from "@/src/domain/entities/resume";
 
 interface BurndownChartProps {
-  data: IBurndownPoint[];
+  data: any[];
 }
 
 export function BurndownChart({ data }: BurndownChartProps) {

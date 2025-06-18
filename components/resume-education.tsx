@@ -2,11 +2,11 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useTranslations } from '@/hooks';
-import { IEducation } from '@/src/domain/entities/resume';
+import { EducationType } from '@/src/domain/resume/entities';
 import { format, parseISO } from 'date-fns';
 
 interface ResumeEducationProps {
-  educations: IEducation[];
+  educations: EducationType[];
 }
 
 export function ResumeEducation({ educations }: ResumeEducationProps) {
@@ -22,7 +22,7 @@ export function ResumeEducation({ educations }: ResumeEducationProps) {
         <div className="grid gap-6">
           {educations.map(education => (
             <div
-              key={education.id}
+              key={'education-' + education.startDate}
               className="relative border-l-2 border-muted pl-6 pb-6 last:pb-0"
             >
               <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-muted bg-background"></div>

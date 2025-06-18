@@ -34,7 +34,7 @@ export function AdminDashboardClient() {
     updateResumeData(newData);
   };
 
-  const handleBurndownUpdate = (updatedPoints: typeof resumeData.burndownPoints) => {
+  const handleBurndownUpdate = (updatedPoints: any[]) => {
     const newData = {
       ...resumeData,
       burndownPoints: updatedPoints,
@@ -93,7 +93,7 @@ export function AdminDashboardClient() {
           <TabsContent value="burndown" className="space-y-8">
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <BurndownForm points={resumeData.burndownPoints} onSave={handleBurndownUpdate} />
+                <BurndownForm points={[]} onSave={handleBurndownUpdate} />
               </div>
               <div>
                 <Card>
@@ -102,7 +102,7 @@ export function AdminDashboardClient() {
                     <CardDescription>See how your burndown chart will appear</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <BurndownChart data={resumeData.burndownPoints} />
+                    <BurndownChart data={[]} />
                   </CardContent>
                 </Card>
               </div>

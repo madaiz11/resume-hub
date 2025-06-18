@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { IBurndownPoint } from '@/src/domain/entities/resume';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Trash } from 'lucide-react';
 import { useState } from 'react';
@@ -34,16 +33,16 @@ const burndownPointSchema = z.object({
 type BurndownPointFormValues = z.infer<typeof burndownPointSchema>;
 
 interface BurndownFormProps {
-  points: IBurndownPoint[];
-  onSave: (points: IBurndownPoint[]) => void;
+  points: any[];
+  onSave: (points: any[]) => void;
 }
 
 export function BurndownForm({ points, onSave }: BurndownFormProps) {
-  const [burndownPoints, setBurndownPoints] = useState<IBurndownPoint[]>(points);
+  const [burndownPoints, setBurndownPoints] = useState<any[]>(points);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const form = useForm<IBurndownPoint>({
+  const form = useForm<BurndownPointFormValues>({
     resolver: zodResolver(burndownPointSchema),
     defaultValues: {
       date: '',

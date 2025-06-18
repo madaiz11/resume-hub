@@ -1,6 +1,7 @@
-import { IResumeData } from "@/src/domain/entities/resume";
+import { ResumeType } from "@/src/domain/resume/entities";
+import { DegreeLevelEnum, SkillCategoryEnum, SkillLevelEnum } from "@/src/domain/resume/enums";
 
-export const mockResumeData: IResumeData = {
+  export const mockResumeData: ResumeType = {
   profile: {
     name: "Alex Morgan",
     title: "Senior Software Engineer",
@@ -17,12 +18,10 @@ export const mockResumeData: IResumeData = {
   },
   experiences: [
     {
-      id: "exp1",
       title: "Senior Software Engineer",
       company: "TechCorp Inc.",
       location: "San Francisco, CA",
       startDate: "2020-03",
-      endDate: null,
       description: [
         "Led the frontend development team of 5 engineers, implementing best practices and improving code quality across projects.",
         "Architected and built a new React-based design system that reduced development time by 40% and improved consistency across products.",
@@ -30,15 +29,14 @@ export const mockResumeData: IResumeData = {
         "Mentored junior developers through pair programming sessions and code reviews, improving team knowledge sharing.",
       ],
       skills: [
-        "React",
-        "TypeScript",
-        "Next.js",
-        "Redux",
-        "Performance Optimization",
+        { name: "React", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "TypeScript", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "Next.js", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "Redux", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "Performance Optimization", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.SPECIALITIES },
       ],
     },
     {
-      id: "exp2",
       title: "Frontend Developer",
       company: "WebSolutions LLC",
       location: "Portland, OR",
@@ -50,10 +48,15 @@ export const mockResumeData: IResumeData = {
         "Collaborated with UX designers to implement accessible user interfaces following WCAG guidelines.",
         "Reduced bundle sizes by 45% through code splitting and lazy loading strategies.",
       ],
-      skills: ["JavaScript", "React", "CSS/SCSS", "Webpack", "Accessibility"],
+      skills: [
+        { name: "JavaScript", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "React", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "CSS/SCSS", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "Webpack", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "Accessibility", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.SPECIALITIES },
+      ],
     },
     {
-      id: "exp3",
       title: "Junior Web Developer",
       company: "Digital Creations",
       location: "Seattle, WA",
@@ -65,13 +68,18 @@ export const mockResumeData: IResumeData = {
         "Improved site performance through image optimization and caching strategies.",
         "Participated in daily stand-ups and sprint planning in an Agile work environment.",
       ],
-      skills: ["HTML", "CSS", "JavaScript", "WordPress", "PHP"],
+      skills: [
+        { name: "HTML", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "CSS", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "JavaScript", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+        { name: "WordPress", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.BACKEND },
+        { name: "PHP", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.BACKEND },
+      ],
     },
   ],
   educations: [
     {
-      id: "edu1",
-      degree: "Master of Science in Computer Science",
+      degree: DegreeLevelEnum.BACHELORS,
       institution: "Stanford University",
       location: "Stanford, CA",
       startDate: "2013-09",
@@ -80,8 +88,7 @@ export const mockResumeData: IResumeData = {
         "Focused on web technologies and distributed systems. Thesis on performance optimization techniques for JavaScript applications.",
     },
     {
-      id: "edu2",
-      degree: "Bachelor of Science in Computer Engineering",
+      degree: DegreeLevelEnum.BACHELORS,
       institution: "University of Washington",
       location: "Seattle, WA",
       startDate: "2009-09",
@@ -91,30 +98,28 @@ export const mockResumeData: IResumeData = {
     },
   ],
   skills: [
-    { id: "s1", name: "JavaScript", level: 5, category: "Frontend" },
-    { id: "s2", name: "TypeScript", level: 5, category: "Frontend" },
-    { id: "s3", name: "React", level: 5, category: "Frontend" },
-    { id: "s4", name: "Next.js", level: 4, category: "Frontend" },
-    { id: "s5", name: "CSS/SCSS", level: 4, category: "Frontend" },
-    { id: "s6", name: "HTML5", level: 5, category: "Frontend" },
-    { id: "s7", name: "Node.js", level: 4, category: "Backend" },
-    { id: "s8", name: "Express", level: 3, category: "Backend" },
-    { id: "s9", name: "MongoDB", level: 3, category: "Backend" },
-    { id: "s10", name: "PostgreSQL", level: 3, category: "Backend" },
-    { id: "s11", name: "Git", level: 4, category: "Tools" },
-    { id: "s12", name: "Docker", level: 3, category: "Tools" },
-    { id: "s13", name: "CI/CD", level: 4, category: "Tools" },
-    { id: "s14", name: "Agile/Scrum", level: 4, category: "Methodology" },
+    { name: "JavaScript", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+    { name: "TypeScript", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+    { name: "React", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+    { name: "Next.js", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+    { name: "CSS/SCSS", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+    { name: "HTML5", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.FRONTEND },
+    { name: "Node.js", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.BACKEND },
+    { name: "Express", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.BACKEND },
+    { name: "MongoDB", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.BACKEND },
+    { name: "PostgreSQL", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.BACKEND },
+    { name: "Git", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.TOOLS },
+    { name: "Docker", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.TOOLS },
+    { name: "CI/CD", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.TOOLS },
+    { name: "Agile/Scrum", level: SkillLevelEnum.EXPERT, category: SkillCategoryEnum.TOOLS },
     {
-      id: "s15",
       name: "Performance Optimization",
-      level: 5,
-      category: "Specialty",
+      level: SkillLevelEnum.EXPERT,
+      category: SkillCategoryEnum.SPECIALITIES,
     },
   ],
   projects: [
     {
-      id: "p1",
       title: "E-commerce Platform Redesign",
       description:
         "Completely redesigned and rebuilt the frontend of a major e-commerce platform, improving conversion rates by 35%.",
@@ -124,7 +129,6 @@ export const mockResumeData: IResumeData = {
         "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
     {
-      id: "p2",
       title: "Banking Dashboard",
       description:
         "Created an interactive dashboard for a fintech company that visualizes financial data and transactions in real-time.",
@@ -134,7 +138,6 @@ export const mockResumeData: IResumeData = {
         "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
     {
-      id: "p3",
       title: "Content Management System",
       description:
         "Built a custom CMS for a publishing company that improved content creation workflow efficiency by 50%.",
@@ -143,14 +146,5 @@ export const mockResumeData: IResumeData = {
       image:
         "https://images.pexels.com/photos/4960464/pexels-photo-4960464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
-  ],
-  burndownPoints: [
-    { date: "2023-01-15", planned: 120, actual: 115 },
-    { date: "2023-02-15", planned: 100, actual: 90 },
-    { date: "2023-03-15", planned: 80, actual: 75 },
-    { date: "2023-04-15", planned: 60, actual: 50 },
-    { date: "2023-05-15", planned: 40, actual: 30 },
-    { date: "2023-06-15", planned: 20, actual: 10 },
-    { date: "2023-07-15", planned: 0, actual: 0 },
   ],
 };

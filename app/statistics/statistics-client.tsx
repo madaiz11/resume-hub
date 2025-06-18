@@ -5,6 +5,14 @@ import { BurndownChart } from "@/components/burndown-chart";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
+const mockBurndownPoints = [
+  { date: "2023-01-15", planned: 120, actual: 115 },
+  { date: "2023-02-15", planned: 100, actual: 90 },
+  { date: "2023-03-15", planned: 80, actual: 75 },
+  { date: "2023-04-15", planned: 60, actual: 50 },
+  
+];  
+
 export function StatisticsClient() {
   const { resumeData, isLoading } = useResumeData();
 
@@ -13,15 +21,15 @@ export function StatisticsClient() {
   }
 
   // Calculate efficiency metrics
-  const initialPoints = resumeData.burndownPoints[0]?.planned || 0;
-  const remainingPoints = resumeData.burndownPoints[resumeData.burndownPoints.length - 1]?.actual || 0;
+  const initialPoints = mockBurndownPoints[0]?.planned || 0;
+  const remainingPoints = mockBurndownPoints[mockBurndownPoints.length - 1]?.actual || 0;
   const completedPoints = initialPoints - remainingPoints;
   const completionPercentage = initialPoints > 0 
     ? Math.round((completedPoints / initialPoints) * 100) 
     : 0;
 
   // Calculate if ahead or behind schedule
-  const lastDataPoint = resumeData.burndownPoints[resumeData.burndownPoints.length - 1];
+  const lastDataPoint = mockBurndownPoints[mockBurndownPoints.length - 1];
   const status = lastDataPoint 
     ? lastDataPoint.actual <= lastDataPoint.planned 
       ? 'ahead' 
@@ -67,7 +75,7 @@ export function StatisticsClient() {
         </Card>
       </div>
       
-      <BurndownChart data={resumeData.burndownPoints} />
+      <BurndownChart data={mockBurndownPoints} />
       
       <Card>
         <CardHeader>

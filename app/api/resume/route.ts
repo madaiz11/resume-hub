@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 export async function GET() {
   try {
     // Destructure to exclude burndownPoints
-    const { burndownPoints, ...resumeData } = mockResumeData;
+    const { ...resumeData } = mockResumeData;
     
     return NextResponse.json(resumeData, { status: 200 });
   } catch (error) {

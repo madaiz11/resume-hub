@@ -1,4 +1,4 @@
-import { IAuthService } from "@/src/domain/ports/auth-service";
+import { IAuthService } from "@/src/domain/resume/ports/auth-service";
 
 export class LocalStorageAuthService implements IAuthService {
   private readonly TOKEN_KEY = "adminToken";

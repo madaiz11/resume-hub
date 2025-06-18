@@ -1,13 +1,13 @@
 "use client";
 
-import { IResumeData } from "@/src/domain/entities/resume";
+import { ResumeType } from "@/src/domain/resume/entities";
 import { LocalStorageResumeRepository } from "@/src/infrastructure/repositories/local-storage-resume-repository";
 import { useEffect, useState } from "react";
 
 const resumeRepository = new LocalStorageResumeRepository();
 
 export function useResumeData() {
-  const [resumeData, setResumeData] = useState<IResumeData | null>(null);
+  const [resumeData, setResumeData] = useState<ResumeType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export function useResumeData() {
     }
   }
 
-  async function updateResumeData(newData: IResumeData) {
+  async function updateResumeData(newData: ResumeType) {
     try {
       await resumeRepository.updateResumeData(newData);
       setResumeData(newData);
